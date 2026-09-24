@@ -26,11 +26,11 @@ jobs:
           gradle-version: '8.9'
 
       - name: Build debug APK
-        run: gradle assembleDebug --stacktrace
+        run: cd fmvp && gradle assembleDebug --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: FootballLinksMVP-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: fmvp/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
